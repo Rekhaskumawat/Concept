@@ -1,0 +1,38 @@
+// class Demo extends Object class
+// concept of clone constructor
+class Demo implements Cloneable
+{
+    public int i,j;
+
+    public Demo(int a , int b)
+    {
+        this.i = a;
+        this.j = b;
+
+    }
+
+    public Object clone() throws CloneNotSupportedException
+    {
+        return super.clone();  
+    }
+
+}
+class CloneDemo
+{
+    public static void main(String Arr[])
+    {
+        try
+        {
+        Demo dobj1 = new Demo(11,21);
+        Demo dobj2 = (Demo)dobj1.clone();
+        System.out.println(dobj2.i);
+        System.out.println(dobj2.j);
+
+        }
+        catch(CloneNotSupportedException cobj)
+        {
+            //logic
+        }
+        
+    }
+}
